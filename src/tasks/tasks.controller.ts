@@ -1,0 +1,14 @@
+import { Controller, Get } from '@nestjs/common';
+import { TasksService } from './tasks.service';
+import { publicDecrypt } from 'crypto';
+
+@Controller('tasks')
+export class TasksController {
+    constructor (private tasksService: TasksService) {
+    }
+
+    @Get()
+    public getAllTasks(){
+        return this.tasksService.getAllTasks();
+    }
+}
