@@ -57,6 +57,23 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Remove all packages and reinstall them
+```bash
+rm -rf node_modules
+rm package-lock.json
+
+npm cache clean --force
+
+npm install
+```
+
+
+## Compress codes and save in a zip file
+```bash
+zip -r backend-project.zip . -x "node_modules/*" "dist/*" ".git/*"
+```
+
+
 ## Deployment
 
 When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
